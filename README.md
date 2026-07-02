@@ -60,3 +60,6 @@ Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para obter m
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kassianesilva7a8bb42a6)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/kassysliv/site_barbearia)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:kassianegomes397@gmail.com)
+
+📧 **Contato:** [kassianegomes397@gmail.com](mailto:kassianegomes397@gmail.com)
