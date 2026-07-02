@@ -1,0 +1,1346 @@
+/* ==========================================================
+   AGENDAR.CSS
+   Sistema de Barbearia - Premium Design Atualizado (UX/UI)
+========================================================== */
+
+/* ==========================================================
+   VARIÁVEIS
+========================================================== */
+
+:root{
+
+    --primary-gold:#C39353;
+    --primary-hover:#b98547;
+
+    --dark:#111111;
+    --dark2:#1b1b1b;
+    --dark3:#222222;
+
+    --border:#3b3b3b;
+
+    --text:#ffffff;
+    --text2:#bdbdbd;
+
+    --success:#2e8b57;
+    --error:#c0392b;
+
+    --radius:18px;
+
+}
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.80),rgba(0,0,0,.80)),
+    url("imagens/barbearia.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    /* PONTO 8: Margem inferior para o conteúdo não sumir atrás do rodapé fixo */
+    padding-bottom: 120px;
+
+}
+
+/* ==========================================================
+   CAIXA PRINCIPAL
+========================================================== */
+
+.agendamento-box{
+
+    width:100%;
+
+    max-width:820px;
+
+    background:rgba(17,17,17,.95);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.50);
+
+    animation:fade .5s ease;
+
+}
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.logo-img{
+
+    width:150px;
+
+    max-width:150px;
+
+    height:auto;
+
+    display:block;
+
+    animation:pulse 3s infinite;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    border-bottom:1px solid #333;
+
+    padding-bottom:20px;
+
+    margin-bottom:35px;
+
+}
+
+.icone-usuario{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(195,147,83,.12);
+
+    border:2px solid var(--primary-gold);
+
+}
+
+.icone-usuario i{
+
+    font-size:28px;
+
+    color:var(--primary-gold);
+
+}
+
+.texto-header h1{
+
+    font-size:30px;
+
+    color:#fff;
+
+    margin-bottom:6px;
+
+}
+
+.texto-header p{
+
+    color:#bdbdbd;
+
+    font-size:14px;
+
+}
+/* ==========================================================
+   MENSAGENS
+========================================================== */
+
+.msg-sucesso{
+
+    background:#173d2a;
+    color:#8df0bc;
+    border:1px solid #2e8b57;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.msg-erro{
+
+    background:#451919;
+    color:#ffb3b3;
+    border:1px solid #6a2c2c;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   FORMULÁRIO E ETAPAS
+========================================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.campo{
+
+    margin-bottom:25px;
+
+}
+
+.campo label{
+
+    display:block;
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+.campo label i{
+
+    color:var(--primary-gold);
+
+    margin-right:8px;
+
+}
+
+.campo input,
+.campo select{
+
+    width:100%;
+
+    height:55px;
+
+    background:#1c1c1c;
+
+    border:1px solid #3b3b3b;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    padding:0 15px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.campo input:hover,
+.campo select:hover{
+
+    border-color:#666;
+
+}
+
+.campo input:focus,
+.campo select:focus{
+
+    border-color:var(--primary-gold);
+
+    box-shadow:0 0 0 3px rgba(195,147,83,.20);
+
+}
+
+select option{
+
+    background:#1b1b1b;
+
+    color:#fff;
+
+}
+
+/* PONTO 3: Bloqueio do Fluxo Sequencial */
+.campo-passo {
+    transition: opacity 0.3s ease, pointer-events 0.3s ease;
+}
+
+.campo-passo.passo-bloqueado {
+    opacity: 0.20;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ==========================================================
+   LINHAS
+========================================================== */
+
+.linha{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.metade{
+
+    flex:1;
+
+}
+
+/* ==========================================================
+   DATA E HORA
+========================================================== */
+
+input[type="date"],
+input[type="time"]{
+
+    color:#fff;
+
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator{
+
+    filter:invert(1);
+
+    cursor:pointer;
+
+}
+/* ==========================================================
+   CARDS DOS BARBEIROS
+========================================================== */
+
+.cards-barbeiros{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+.card-barbeiro{
+
+    position:relative;
+
+}
+
+.card-barbeiro input{
+
+    display:none;
+
+}
+
+.card-barbeiro label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#1b1b1b;
+
+    border:2px solid #333;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.card-barbeiro label:hover{
+
+    border-color:var(--primary-gold);
+
+    transform:translateY(-5px);
+
+}
+
+.card-barbeiro input:checked + label{
+
+    border-color:var(--primary-gold);
+
+    background:#2b2117;
+
+    box-shadow:0 0 20px rgba(195,147,83,.30);
+
+}
+
+.card-avatar{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:rgba(195,147,83,.15);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+.card-avatar i{
+
+    font-size:28px;
+
+    color:var(--primary-gold);
+
+}
+
+.card-barbeiro h3{
+
+    color:#fff;
+
+    margin-bottom:5px;
+
+    font-size:19px;
+
+}
+
+.card-barbeiro p{
+
+    color:#bdbdbd;
+
+    font-size:14px;
+
+    text-align:center;
+
+}
+
+/* ==========================================================
+   CARDS DOS SERVIÇOS
+========================================================== */
+
+.cards-servicos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; 
+    margin-top: 15px;
+    width: 100%;
+}
+
+.card-servico {
+    position: relative;
+    width: 100%; 
+}
+
+.card-servico input {
+    display: none; 
+}
+
+.card-servico label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    width: 100%;
+    height: 160px; 
+    
+    background: #111111; 
+    border: 1px solid #292929; 
+    border-radius: 18px;
+    
+    cursor: pointer;
+    transition: all .3s ease;
+    padding: 15px;
+}
+
+.card-servico label:hover {
+    border-color: var(--primary-gold);
+    transform: translateY(-3px);
+}
+
+.card-servico input:checked + label {
+    border-color: var(--primary-gold);
+    background: rgba(195, 147, 83, 0.05); 
+    box-shadow: 0 0 15px rgba(195, 147, 83, 0.2);
+}
+
+.card-servico i {
+    font-size: 32px;
+    color: var(--primary-gold);
+    margin-bottom: 15px;
+}
+
+.card-servico h3 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.card-servico .preco {
+    color: var(--primary-gold);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   HORÁRIOS INDIVIDUAIS (Grid Dinâmico do Novo Script)
+========================================================== */
+
+.grid-horarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.opcao-hora input { 
+    display: none; 
+}
+
+.opcao-hora label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111111;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    height: 45px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+}
+
+.opcao-hora label:hover { 
+    border-color: var(--primary-gold); 
+}
+
+.opcao-hora input:checked + label {
+    background: var(--primary-gold);
+    color: #000000;
+    font-weight: 600;
+    border-color: var(--primary-gold);
+}
+
+/* PONTO 5: Diferenciação de Horários Reservados */
+.opcao-hora.hora-indisponivel label {
+    background: #161616 !important;
+    color: #444444 !important;
+    border-color: #222222 !important;
+    cursor: not-allowed !important;
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+/* ==========================================================
+   RESUMO ORIGINAL (Mantido para compatibilidade interna)
+========================================================== */
+
+.resumo{
+
+    background:#181818;
+
+    border-left:5px solid var(--primary-gold);
+
+    border-radius:15px;
+
+    padding:25px;
+
+    margin:30px 0;
+
+}
+
+.resumo h3{
+
+    color:var(--primary-gold);
+
+    margin-bottom:18px;
+
+}
+
+.resumo p{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#d5d5d5;
+
+    margin-bottom:12px;
+
+}
+
+.resumo p i{
+
+    color:var(--primary-gold);
+
+}
+
+/* ==========================================================
+   BOTÕES ORIGINAIS
+========================================================== */
+
+.btn-agendar{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary-gold);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-agendar i{
+
+    margin-right:8px;
+
+}
+
+.btn-agendar:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 30px rgba(195,147,83,.35);
+
+}
+
+.btn-sair{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    border:2px solid #ff4d4d;
+
+    color:#ff6b6b;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-sair:hover{
+
+    background:#ff4d4d;
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   SCROLL
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary-gold);
+
+    border-radius:10px;
+
+}
+
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ==========================================================
+   ESTILOS DO CALENDÁRIO DESIGN PREMIUM (+ MELHORIAS PONTO 4)
+========================================================== */
+.calendario-wrapper {
+    background: #111111;
+    border: 1px solid #292929;
+    border-radius: 18px;
+    padding: 20px;
+    width: 100%;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.calendar-header span {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.cal-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.cal-btn:hover {
+    color: var(--primary-gold);
+}
+
+.calendar-days-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 15px;
+}
+
+.calendar-numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.calendar-numbers-grid span {
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.fade-day {
+    color: #3d3d3d;
+    cursor: default;
+    user-select: none;
+}
+
+.active-day {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.active-day:hover {
+    background: rgba(195, 147, 83, 0.1);
+    color: var(--primary-gold);
+}
+
+.calendar-numbers-grid .selected-day, 
+.calendar-numbers-grid .selected-day:hover {
+    background: var(--primary-gold) !important;
+    color: #000000 !important;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(195, 147, 83, 0.4);
+}
+
+/* PONTO 4: Dias passados e domingos desabilitados */
+.calendar-numbers-grid span.past-day {
+    color: #2a2a2a !important;
+    cursor: not-allowed !important;
+    background: transparent !important;
+    text-decoration: line-through;
+}
+
+.calendar-numbers-grid span.sunday-disabled {
+    color: #552a2a !important;
+    cursor: not-allowed !important;
+    background: rgba(255, 0, 0, 0.01) !important;
+}
+
+/* ==========================================================
+   NOVA SEÇÃO: COMPONENTES DE STEPPER E STICKY FOOTER (9, 1 e 8)
+========================================================== */
+
+/* PONTO 9: Componente do Stepper */
+.stepper-container {
+    margin-bottom: 30px;
+    background: #161616;
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid #292929;
+}
+
+.stepper-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 10px;
+}
+
+.stepper-bar-bg {
+    width: 100%;
+    background: #252525;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.stepper-bar-progress {
+    width: 25%;
+    background: var(--primary-gold);
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+/* PONTOS 1 e 8: Barra de Resumo Fixa (Sticky Footer) */
+.sticky-summary-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #161616;
+    border-top: 2px solid #292929;
+    padding: 15px 30px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.summary-total-box {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.summary-total-box span {
+    color: var(--primary-gold);
+}
+
+.summary-text {
+    font-size: 13px;
+    color: var(--text2);
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Botão fixado no rodapé */
+.btn-agendar-sticky {
+    background: #333333;
+    color: #666666;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Estado habilitado do botão do rodapé */
+.btn-agendar-sticky.ready {
+    background: var(--primary-gold);
+    color: #000000;
+    cursor: pointer;
+}
+
+.btn-agendar-sticky.ready:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(195, 147, 83, 0.3);
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .container {
+        padding-bottom: 150px; /* Espaço extra para telas menores devido à quebra de linha do footer */
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .linha{
+
+        flex-direction:column;
+
+        gap:0;
+
+    }
+
+    .cards-barbeiros,
+    .cards-servicos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card-servico label {
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo-img{
+
+        width:120px;
+
+        max-width:120px;
+
+    }
+
+    /* Ajuste do rodapé fixo para mobile */
+    .sticky-summary-footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .summary-text {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .btn-agendar-sticky {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .agendamento-box{
+
+        padding:20px;
+
+    }
+
+    .texto-header h1{
+
+        font-size:22px;
+
+    }
+
+    .icone-usuario{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+    .icone-usuario i{
+
+        font-size:22px;
+
+    }
+
+    .campo input,
+    .campo select{
+
+        height:50px;
+
+    }
+
+    .btn-agendar{
+
+        height:52px;
+
+    }
+
+}
+
+/* ==========================================================
+   EFEITOS DE TRANSIÇÃO TIPO GLOBAL
+========================================================== */
+
+.card-barbeiro,
+.card-servico,
+.opcao-hora label,
+button,
+a,
+input,
+select{
+
+    transition:.3s;
+
+}
+
+img{
+
+    user-select:none;
+
+}
+/* ========================================================================
+   ESTILOS PREMIUM DO FLUXO DE AGENDAMENTO (Adicionar no agendar.css)
+   ======================================================================== */
+
+:root {
+    --primary-gold: #d4af37;
+    --bg-gray: #111111;
+    --border-gray: #292929;
+    --text-muted: #888888;
+}
+
+/* Stepper e Barra de Progresso */
+.stepper-container {
+    margin-bottom: 25px;
+    background: #161616;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border-gray);
+}
+.stepper-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+.stepper-bar-bg {
+    width: 100%;
+    background: #252525;
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.stepper-bar-progress {
+    width: 25%;
+    background: var(--primary-gold);
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+/* Bloqueio Visual de Etapas */
+.campo-passo {
+    transition: opacity 0.3s ease, pointer-events 0.3s ease;
+    margin-bottom: 25px;
+}
+.campo-passo.passo-bloqueado {
+    opacity: 0.25;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Cards de Serviços */
+.cards-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+.card-servico input[type="radio"] { display: none; }
+.card-servico label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    background: #111;
+    border: 2px solid #292929;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card-servico label i {
+    font-size: 24px;
+    color: var(--primary-gold);
+    margin-bottom: 10px;
+}
+.card-servico label h3 { font-size: 15px; margin: 5px 0; }
+.card-servico label .preco { font-weight: 700; color: #fff; }
+
+.card-servico input[type="radio"]:checked + label {
+    border-color: var(--primary-gold);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+/* Calendário */
+.calendar-numbers-grid span.past-day {
+    color: #333 !important;
+    cursor: not-allowed !important;
+    background: transparent !important;
+    text-decoration: line-through;
+}
+.calendar-numbers-grid span.sunday-disabled {
+    color: #442222 !important;
+    cursor: not-allowed !important;
+    background: rgba(255, 0, 0, 0.02) !important;
+}
+
+/* Grid de Horários */
+.grid-horarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+.opcao-hora input { display: none; }
+.opcao-hora label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    height: 45px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 500;
+    font-size: 14px;
+}
+.opcao-hora label:hover { border-color: var(--primary-gold); }
+.opcao-hora input:checked + label {
+    background: var(--primary-gold);
+    color: #000;
+    font-weight: 600;
+    border-color: var(--primary-gold);
+}
+.opcao-hora.hora-indisponivel label {
+    background: #181818 !important;
+    color: #444 !important;
+    border-color: #222 !important;
+    cursor: not-allowed !important;
+    text-decoration: line-through;
+    pointer-events: none;
+}
+
+/* Painel Resumo Fixo (Sticky Footer) */
+.sticky-summary-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #161616;
+    border-top: 2px solid var(--border-gray);
+    padding: 15px 20px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.summary-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.summary-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.summary-total-box {
+    font-size: 16px;
+    font-weight: 700;
+}
+.summary-total-box span {
+    color: var(--primary-gold);
+}
+.sticky-summary-footer .btn-agendar-sticky {
+    background: #252525;
+    color: #555;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: not-allowed;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sticky-summary-footer .btn-agendar-sticky.ready {
+    background: var(--primary-gold);
+    color: #000;
+    cursor: pointer;
+}
+.sticky-summary-footer .btn-agendar-sticky.ready:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.container { padding-bottom: 120px; }

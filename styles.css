@@ -1,0 +1,380 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+:root {
+    --primary-gold: #D49A3B;       /* Dourado premium baseado no design */
+    --primary-gold-hover: #B8822F;
+    --dark: #121212;
+    --border: #2A2A2A;            /* Borda sutil para o modo escuro */
+    --text: #FFFFFF;
+    --text2: #AAAAAA;             /* Cinza suave para melhor leitura */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        linear-gradient(rgba(0, 0, 0, .78), rgba(0, 0, 0, .78)),
+        url("imagens/barbearia.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================
+   LOGIN / REGISTER BOX
+========================================== */
+
+.login-box {
+    width: 440px;
+    background: rgba(18, 18, 18, .98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 35px;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .6);
+}
+
+/* ==========================================
+   HEADER ACTIONS (Botão de Fechar X)
+========================================== */
+
+.close-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+    margin-top: -15px;
+}
+
+.close-button {
+    color: #666;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.close-button:hover {
+    color: var(--primary-gold);
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 140px !important;
+    height: auto !important;
+    display: block;
+}
+
+/* ==========================================
+   TÍTULOS
+========================================== */
+
+.login-box h1 {
+    color: var(--text);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.subtitulo {
+    color: var(--text2);
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #DDDDDD;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group label i {
+    color: var(--primary-gold);
+    margin-right: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #1A1A1A;
+    color: #fff;
+    padding: 0 45px;
+    font-size: 14px;
+    transition: .3s ease;
+}
+
+.input-group input::placeholder {
+    color: #555555;
+}
+
+.input-group input:hover {
+    border-color: #444444;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    background: #1E1E1E;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    bottom: 16px; /* Alinhamento fixo com ou sem label superior */
+    color: #777777;
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    cursor: pointer;
+    color: #777777;
+    font-size: 16px;
+    transition: .3s;
+}
+
+.toggle-password:hover {
+    color: var(--primary-gold);
+}
+
+/* ==========================================
+   OPÇÕES (Lembrar-me / Esqueci a senha)
+========================================== */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.login-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d5d5d5;
+    cursor: pointer;
+}
+
+.login-options input[type="checkbox"] {
+    accent-color: var(--primary-gold);
+    cursor: pointer;
+}
+
+/* Anti-roxo para o link "Esqueci minha senha" */
+.login-options a,
+.login-options a:link,
+.login-options a:visited {
+    color: var(--primary-gold) !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.login-options a:hover {
+    color: var(--primary-gold-hover) !important;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   BOTÕES (Geral e Cadastrar)
+========================================== */
+
+button,
+.btn-cadastrar {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-gold);
+    color: #121212; /* Texto escuro garante melhor leitura e contraste */
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover,
+.btn-cadastrar:hover {
+    background: var(--primary-gold-hover);
+}
+
+/* ==========================================
+   BOTÃO DO GOOGLE 
+========================================== */
+
+.btn-google {
+    background: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+}
+
+.btn-google:hover {
+    background: #1A1A1A !important;
+    border-color: #555555 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn-google img {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================================
+   DIVISOR "OU"
+========================================== */
+
+.divider-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #555555;
+    margin: 22px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider-container::before, 
+.divider-container::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border);
+}
+
+.divider-container:not(:empty)::before { margin-right: 1em; }
+.divider-container:not(:empty)::after { margin-left: 1em; }
+
+/* ==========================================
+   MENSAGENS (ERRO E SUCESSO)
+========================================== */
+
+.msg-erro {
+    background: #3A1414;
+    color: #FFA3A3;
+    border: 1px solid #5C2020;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.msg-sucesso {
+    background: #11301E;
+    color: #A3EBB1;
+    border: 1px solid #1E4E32;
+    border-radius: 8px;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Anti-roxo para o link "Faça login aqui" dentro do alerta de sucesso */
+.msg-sucesso a,
+.msg-sucesso a:link,
+.msg-sucesso a:visited {
+    color: #FFFFFF !important;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-left: 4px;
+    transition: color 0.2s ease;
+}
+
+.msg-sucesso a:hover,
+.msg-sucesso a:active {
+    color: var(--primary-gold) !important;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   RODAPÉ E LINKS ÚTEIS
+========================================== */
+
+.footer-text {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--text2);
+    font-size: 14px;
+}
+
+/* Anti-roxo definitivo para o rodapé (Cadastre-se / Fazer login) */
+.footer-text a,
+.footer-text a:link,
+.footer-text a:visited {
+    color: var(--primary-gold) !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.footer-text a:hover {
+    color: var(--primary-gold-hover) !important;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media(max-width: 480px) {
+    .login-box {
+        width: 92%;
+        padding: 35px 20px;
+    }
+
+    .login-box h1 {
+        font-size: 24px;
+    }
+}
